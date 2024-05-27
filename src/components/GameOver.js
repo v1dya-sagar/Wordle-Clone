@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "../App";
 
+// component to handle game over 
 function GameOver() {
   const {
     board,
@@ -12,6 +13,8 @@ function GameOver() {
     onDelete,
   } = useContext(AppContext);
   return (
+
+    // only display after all attempts are used
     <div className="gameOver">
       <h3>
         {gameOver.guessedWord

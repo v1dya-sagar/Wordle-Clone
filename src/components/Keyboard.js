@@ -3,6 +3,7 @@ import Key from "./Key";
 import { AppContext } from "../App";
 
 function Keyboard() {
+  // 3 rows of buttons in the on-screen keyboard
   const keys1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
   const keys2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
   const keys3 = ["Z", "X", "C", "V", "B", "N", "M"];
@@ -17,6 +18,8 @@ function Keyboard() {
     onDelete,
   } = useContext(AppContext);
 
+
+  // purely to handle the keyboard inputs from the user
   const handleKeyboard = useCallback(
     (event) => {
       if (gameOver.gameOver) return;
@@ -44,6 +47,8 @@ function Keyboard() {
     },
     [currAttempt]
   );
+
+  // listen to the users inputs from the keyboard
   useEffect(() => {
     document.addEventListener("keydown", handleKeyboard);
 
@@ -54,7 +59,9 @@ function Keyboard() {
 
   console.log(disabledLetters);
   return (
-    <div className="keyboard" onKeyDown={handleKeyboard}>
+
+  // build the on screen keyboard, onKeyDown for the keyboard of user
+    <div className="keyboard" onKeyDown={handleKeyboard}> 
       <div className="line1">
         {keys1.map((key) => {
           return <Key keyVal={key} disabled={disabledLetters.includes(key)} />;

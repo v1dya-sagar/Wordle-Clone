@@ -2,10 +2,13 @@ import React, { useContext } from "react";
 import { AppContext } from "../App";
 import Letter from "./Letter";
 
+// the board is basically a 6x5 matrix (array of arrays)
+// each letter is a component  that has letterPos and attemptVal as props
+
 function Board() {
   return (
     <div className="board">
-      {" "}
+
       <div className="row">
         <Letter letterPos={0} attemptVal={0} />
         <Letter letterPos={1} attemptVal={0} />
