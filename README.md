@@ -1,4 +1,5 @@
 Wordle Game Description
+
 Wordle is a daily word puzzle game that challenges players to guess a five-letter word within six attempts. The game provides feedback for each guess, helping players narrow down the correct word.
 
 How to Play:
